@@ -1,7 +1,7 @@
 const app = require("express")();
 const bodyParser = require("body-parser");
 const apiRouter = require("./router/api-router");
-//const cors = require('cors');
+
 const {
   handle400,
   handle404,
@@ -11,8 +11,6 @@ const {
 } = require("./errors/errorHandler");
 
 app.use(bodyParser.json());
-//app.use(cors());
-
 app.use("/api", apiRouter);
 
 app.all("/*", (req, res, next) => {
