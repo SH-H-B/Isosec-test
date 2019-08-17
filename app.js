@@ -1,5 +1,6 @@
 const app = require("express")();
 const bodyParser = require("body-parser");
+const apiRouter = require("./router/api-router");
 //const cors = require('cors');
 const {
   handle400,
@@ -17,6 +18,7 @@ app.use("/api", apiRouter);
 app.all("/*", (req, res, next) => {
   next({ status: 404, msg: "Page not found" });
 });
+
 app.use(handle400);
 app.use(handle404);
 app.use(handle422);
