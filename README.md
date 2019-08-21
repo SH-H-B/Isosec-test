@@ -8,6 +8,7 @@ Frontend:
 1. On the web-app when user click on the search widget, the placeholder text slowly fade out, completely clearing
 the placeholder. If the input is left blank and the search widgets focus is removed, the placeholder
 should fade in slowly.
+
 2. If user click/tap into the search widget a focus state has been applied (browser default)
 
 3. User enter a single alphanumeric character into the search box no search results are displayed.
@@ -35,18 +36,14 @@ api/users/:{id}/friends
 
 ```
 
-1. User request the API endpoint “/users” to usersThen I should be able to call the API endpoint and be provided with a list of users 
-in JSON format
+1. User request the API endpoint “/users” to users,then I should be able to call the API endpoint and be provided with a list of users in JSON format
 2. Query amount,user should be able to call the API endpoint and specify the number of users through the use of
-query parameters
-And receive a list of users in JSON format.
+query parameters and receive a list of users in JSON format.
 3. Query :serach, User request the API endpoint “/users?query=Jo” to retrieve all users who contain the
 “query” string in their forename & surname.
-Then, he should be able to call the API endpoint and specify the query string to filter users
-And retrieve a list of users in JSON format
+Then, he should be able to call the API endpoint and specify the query string to filter usersand retrieve a list of users in JSON format
 4. User can request the API endpoint “/users/{id}” to retrieve a specific user
-5. User canrequest the API endpoint “/users/{id}/friends” to retrieve a specific users
-“information”.
+5. User canrequest the API endpoint “/users/{id}/friends” to retrieve a specific users “information”.
 
 
 
