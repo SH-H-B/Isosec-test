@@ -1,6 +1,6 @@
 # Isosec-test
 
-This is a *responsive*User Management Web-App search page which returns a selection of users from a backend API and displays
+This is a _responsive mobile/desktop_ User Management Web-App search page which returns a selection of users from a backend API and displays
 them.
 
 Frontend:
