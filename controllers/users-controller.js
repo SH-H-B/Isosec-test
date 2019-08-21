@@ -21,7 +21,11 @@ exports.getUserById = (req, res, next) => {
       if (!user) return Promise.reject({ status: 404, msg: "No users found" });
       return res.status(200).send({ user });
     })
-    .catch(next);
+    .catch(function(err) {
+      if (err == "ID should be a number") {
+        return res.status(400).send(err);
+      } else next;
+    });
 };
 
 exports.getUserFriends = (req, res, next) => {
