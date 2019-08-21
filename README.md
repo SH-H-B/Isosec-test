@@ -49,6 +49,19 @@ And retrieve a list of users in JSON format
 “information”.
 
 ```
+#Getting Started
+
+Follow these instructions in order to get a copy of the project up and running on your local machine for development and testing purposes.
+
+#Installing
+
+1.First of all fork this project to your own repo.
+2.Clone the repo remotely by executing this command:
+```https://github.com/SH-H-B/Isosec-test.git
+```
+3. Change directory to the local repo file.
+4. Running the following command will install the dependencies:
+
 
 
 
