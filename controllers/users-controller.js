@@ -1,9 +1,36 @@
-const { fetchAllUsers } = require("../models/users-models");
+const {
+  fetchAllUsers,
+  fetchUserById,
+  fetchUserFriend
+} = require("../models/users-models");
 
 exports.getAllUsers = (req, res, next) => {
-  fetchAllUsers()
+  fetchAllUsers(req.query)
     .then(users => {
+      if (!users || users.length === 0) {
+        return Promise.reject({ status: 404, msg: "No users found" });
+      }
       return res.status(200).send({ users });
+    })
+    .catch(next);
+};
+
+exports.getUserById = (req, res, next) => {
+  fetchUserById(req.params)
+    .then(([user]) => {
+      if (!user) return Promise.reject({ status: 404, msg: "No users found" });
+      return res.status(200).send({ user });
+    })
+    .catch(next);
+};
+
+exports.getUserFriends = (req, res, next) => {
+  fetchUserFriend(req.params)
+    .then(friends => {
+      if (!friends) {
+        return Promise.reject({ status: 404, msg: "No information found" });
+      }
+      return res.status(200).send({ friends });
     })
     .catch(next);
 };
