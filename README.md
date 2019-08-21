@@ -3,7 +3,9 @@
 This is a _responsive mobile/desktop_ User Management Web-App search page which returns a selection of users from a backend API and displays
 them.
 
-Frontend:
+Language: ​JavaScript
+
+Frontend: React, CSS, Bootstrap,
 
 1. On the web-app when user click on the search widget, the placeholder text slowly fade out, completely clearing
    the placeholder. If the input is left blank and the search widgets focus is removed, the placeholder
@@ -24,7 +26,7 @@ Frontend:
    Then the API endpoint “/users/{id}/friends” should be called. This information displayed in a list,
    with an “go back” option to return to the table.
 
-Backend:
+Backend: Node.js, Express
 
 Endpoints:
 
