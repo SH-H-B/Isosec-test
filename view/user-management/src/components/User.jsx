@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getUserById, getUserFriends } from "../api";
+import { navigate } from "@reach/router";
 
 class User extends Component {
   state = {
@@ -15,22 +16,34 @@ class User extends Component {
         this.setState({ user: user, error: "", loading: false });
       })
       .catch(({ response }) => {
-        this.setState({ error: response.data.msg });
+        navigate("/error", {
+          replace: true,
+          state: {
+            code: response.status,
+            message: response.data
+          }
+        });
       });
   }
 
   friendsClickHandler = e => {
     e.preventDefault();
-    e.persist();
     getUserFriends(this.props.id)
       .then(friends => {
         this.setState({
-          friends: friends
+          friends: friends,
+          loading: false
         });
       })
       .catch(({ response }) => {
-        console.log(response);
-        this.setState({ error: response, loading: true });
+        this.setState({ loading: false });
+        navigate("/error", {
+          replace: true,
+          state: {
+            code: response.data.status,
+            message: response.data.msg
+          }
+        });
       });
   };
 
