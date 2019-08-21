@@ -18,13 +18,16 @@ exports.getAllUsers = (req, res, next) => {
 exports.getUserById = (req, res, next) => {
   fetchUserById(req.params)
     .then(([user]) => {
-      if (!user) return Promise.reject({ status: 404, msg: "No users found" });
       return res.status(200).send({ user });
     })
     .catch(function(err) {
       if (err == "ID should be a number") {
         return res.status(400).send(err);
-      } else next;
+      } else if ((err.status = 404)) {
+        res.status(404).send(err);
+      } else {
+        next;
+      }
     });
 };
 

@@ -20,7 +20,7 @@ exports.fetchAllUsers = ({ amount, query }) => {
 
 exports.fetchUserById = ({ id }) => {
   return new Promise(function(resolve, reject) {
-    if (isNaN(parseInt(id))) {
+    if (isNaN(id)) {
       reject("ID should be a number");
     } else {
       let user = users.filter(user => {
@@ -30,7 +30,7 @@ exports.fetchUserById = ({ id }) => {
       if (user.length !== 0) {
         resolve(user);
       } else {
-        reject("error");
+        reject("No users found");
       }
     }
   });

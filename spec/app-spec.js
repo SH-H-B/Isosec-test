@@ -73,7 +73,7 @@ describe("/api", () => {
         }));
 
     it("GET: status 404, response with User not found when there is no user found", () =>
-      request.get("/api/users/as").expect(500));
+      request.get("/api/users/as").expect(400));
 
     it("GET: status 200, response with an array of friends ", () =>
       request
