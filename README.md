@@ -68,7 +68,8 @@ https://github.com/SH-H-B/Isosec-test.git
 npm install
 npm run dev ---> run the server
 npm test ---> run the test
-npm start ---> run react
+cd ../view/user-management  => npm install (for react dependencies)
+cd ../view/user-management  => npm start ---> run react
 ```
 
 5. The dependencies are required for development purposes, for convenience they are also listed below:
